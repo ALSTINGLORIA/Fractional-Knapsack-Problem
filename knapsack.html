@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractional Knapsack Problem</title>
+    <link rel="stylesheet" href="knapsack.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Fractional Knapsack Problem</h1>
+        
+        <label for="capacity">Knapsack Capacity:</label>
+        <input type="number" id="capacity" placeholder="Enter knapsack capacity">
+        
+        <h2>Items</h2>
+        <div id="items">
+            <div class="item">
+                <input type="number" class="weight" placeholder="Weight">
+                <input type="number" class="value" placeholder="Value">
+            </div>
+        </div>
+        <button onclick="addItem()">Add Item</button>
+        
+        <br><br>
+        <button onclick="calculateMaxValue()">Calculate Maximum Value</button>
+
+        <h3>Result:</h3>
+        <p id="result">Max Value: </p>
+    </div>
+
+    <script src="knapsack.js"></script>
+</body>
+</html>
