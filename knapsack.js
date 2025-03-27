@@ -1,4 +1,4 @@
-// Function to add a new item input field
+
 function addItem() {
     const itemsContainer = document.getElementById('items');
     const newItem = document.createElement('div');
@@ -11,14 +11,14 @@ function addItem() {
     itemsContainer.appendChild(newItem);
 }
 
-// Function to calculate the maximum value that can be obtained
+
 function calculateMaxValue() {
     const capacity = parseFloat(document.getElementById('capacity').value);
     const weights = [];
     const values = [];
     const items = document.querySelectorAll('.item');
     
-    // Collect all weights and values
+
     items.forEach(item => {
         const weight = parseFloat(item.querySelector('.weight').value);
         const value = parseFloat(item.querySelector('.value').value);
@@ -34,7 +34,6 @@ function calculateMaxValue() {
         return;
     }
 
-    // Perform Fractional Knapsack calculation
     const n = weights.length;
     const itemsArray = [];
 
@@ -42,7 +41,7 @@ function calculateMaxValue() {
         itemsArray.push({ weight: weights[i], value: values[i], ratio: values[i] / weights[i] });
     }
 
-    // Sort items by value/weight ratio
+
     itemsArray.sort((a, b) => b.ratio - a.ratio);
 
     let remainingCapacity = capacity;
@@ -62,6 +61,6 @@ function calculateMaxValue() {
         }
     }
 
-    // Display the result
+
     document.getElementById('result').innerText = `Max Value: ${totalValue.toFixed(2)}`;
 }
